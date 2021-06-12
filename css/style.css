@@ -1,0 +1,118 @@
+body{
+    width: 100%;
+    height: auto;
+    /* background-color: brown; */
+    background-color: black;
+
+}
+/* HEADER */
+header{
+    border: 1px dashed white;
+    margin: 0;
+    padding: 0;
+    height: 8%;
+    color: white;
+}
+h1{
+    border: 2px dashed red;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.menu{
+    border: 1px dashed yellow;
+    height: 3px;
+    margin: 0;
+}
+ul{
+    margin: 0;
+    height: 3px;
+    width: 100%;
+    list-style-type: none;
+    vertical-align: center;
+}
+li{
+    display:inline-block;
+    text-decoration: none;
+    border: 1px dotted pink;
+    text-align:center;
+    margin: 0 auto;
+    margin-left: 15%;
+}
+/* GAME */
+/* .container{
+    width: 90%;
+    height: 70vh;
+    border: 1px dashed blue;
+    background-color: white;
+    margin: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+} */
+.left{
+    flex-direction: column;
+    width: 48%;
+    background-color: red;
+    border: 1px dashed white;
+    height: 100%;
+    margin: 0;
+}
+.middle{
+    background: green;
+    width: 68%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.right{
+    width: 50%;
+    background-color: purple;
+    border: 1px dashed brown;
+    height: 100%;
+
+    justify-content: space-between;
+
+}
+.player{
+    background: blue;
+    border-radius: 10% 10%;
+    width: 100%;
+    height: 40%;
+    margin:0;
+    text-align: center;
+}
+.player .score{
+    font-size: 5rem;
+}
+P {
+    background-color: teal;
+    text-align: center;
+}
+.game{
+    display: flex;
+    flex-direction: row;
+    border: 1px dashed yellow;
+    height: 80%;
+}
+.middle h2{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    background:brown;
+    margin:0;
+
+}
+/* BOARD */
+.board {
+    display: flex;
+    height: 50%;
+    justify-content: center;
+        justify-items: center;
+    margin: 0;
+}
+
+.board > img{
+
+    margin: 45%;
+}
