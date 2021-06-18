@@ -116,3 +116,10 @@ P {
 
     margin: 45%;
 }
+
+button{
+    /* display: hidden; */
+    width: 45%;
+    height: 50px;
+    margin: 15px;
+}

@@ -12,24 +12,32 @@
  *  -IF 7 or ll add 5 points
  *  IF NOT 7 or 11 next player
  *  NEXT PLAYER..
+ * 
+ *  TODO ON PLAYER SWITCH:
+ *    todo NAME SHOULD BOLDEN AND 
+ *     player section should lighten
  */
 
-
-
-// let diceOne = document.getElementById('diceOne').src;
-// let diceTwo = document.getElementById('diceTwo').src;
-// console.log(diceOne);
 
 let players;
 let roll;
 
-function choosePlayers() {
+function choosePlayers(players) {
 
     // //todo SET PLAYER SCORE TO 0 4
     // console.log('Play Game')
 
 
-    // players = alert('How many players? 1-4');
+    players = prompt('How many players? (1-4)');
+
+    if (players != 1 || players != 2 || players != 3 || players != 4) {
+
+        alert("Invalid Input!");
+        // players = prompt('How many players? 1-4');
+        console.log(`Players: ${players}`);
+    } else {
+        return players;
+    }
 
     
     
@@ -52,25 +60,27 @@ const rollDice = function () {
     //roll 1 - 6
     let rollOne = Math.floor(Math.random() * (max - min) + min);
     let rollTwo = Math.floor(Math.random() * (max - min) + min);
-    
-    
-    console.log(`roll: ${rollOne}`)
-    console.log(`roll: ${rollTwo}`)
 
     //DISPLAY DICE 
     displayDice(rollOne, rollTwo);
+        
     
-    roll = rollOne + rollTwo;
+    return roll = rollOne + rollTwo;
+
 }
 
 function playGame() {
     
     // SELECT players
-    choosePlayers();
+    choosePlayers(players);
 
     //  1st PLAYER ROLLS
-    let roll = rollDice();
-    console.log(`Player rolls${roll}`)
+    roll = rollDice();
+    console.log(roll);
 
+    let playerScore = document.querySelector('.player-1-score').textContent;
+    console.log(`playerScore: ${document.querySelector('.player-1-score').textContent}`)
+    console.log(playerScore);
+    playerScore = roll;
 
 }
