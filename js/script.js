@@ -30,13 +30,14 @@ function choosePlayers(players) {
 
     players = prompt('How many players? (1-4)');
 
-    if (players != 1 || players != 2 || players != 3 || players != 4) {
+    if (players === 1 || players === 2 || players === 3 || players === 4) {
 
-        alert("Invalid Input!");
+
         // players = prompt('How many players? 1-4');
         console.log(`Players: ${players}`);
     } else {
         return players;
+         alert("Invalid Input!");
     }
 
     
@@ -51,7 +52,7 @@ function displayDice(diceOne, diceTwo) {
 }
 
 
-const rollDice = function () {
+const rollDice = function (roll) {
 
     const max = 6;
     const min = 1;
@@ -69,10 +70,23 @@ const rollDice = function () {
 
 }
 
+function resetScore () {
+    
+    for (var i = 1; i <= 4; i++){
+             document.querySelector(`.player-${i}-score`).textContent = 0;
+    }
+}
+
 function playGame() {
+
+    resetScore();
     
     // SELECT players
     choosePlayers(players);
+
+    for (let i = 0; i < players; i++){
+        rollDice();
+    }
 
     //  1st PLAYER ROLLS
     roll = rollDice();

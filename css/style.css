@@ -7,14 +7,14 @@ body{
 }
 /* HEADER */
 header{
-    border: 1px dashed white;
+
     margin: 0;
     padding: 0;
     height: 8%;
     color: white;
 }
 h1{
-    border: 2px dashed red;
+
     text-align: center;
     font-size: 2rem;
     padding: 0;
@@ -22,7 +22,6 @@ h1{
 }
 
 .menu{
-    border: 1px dashed yellow;
     height: 3px;
     margin: 0;
 }
@@ -60,20 +59,21 @@ li{
     margin: 0;
 }
 .middle{
-    background: green;
     width: 68%;
     margin-left: 5%;
     margin-right: 5%;
 }
 .right{
     width: 50%;
-    background-color: purple;
+    background-color: white;
     border: 1px dashed brown;
     height: 100%;
 
     justify-content: space-between;
 
 }
+/*DICE*/
+img{ margin: 5%;}
 .player{
     background: blue;
     border-radius: 10% 10%;
@@ -110,16 +110,20 @@ P {
     justify-content: center;
         justify-items: center;
     margin: 0;
+    background-color: green;
+
 }
 
 .board > img{
 
-    margin: 45%;
+    margin: 25%;
+    
+    
 }
 
 button{
     /* display: hidden; */
-    width: 45%;
+    width: 100%;
     height: 50px;
-    margin: 15px;
+    margin: 3%;
 }
