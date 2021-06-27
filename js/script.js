@@ -20,7 +20,7 @@
 
 
 let players;
-let roll;
+let diceRoll;
 
 function choosePlayers(players) {
 
@@ -28,19 +28,25 @@ function choosePlayers(players) {
     // console.log('Play Game')
 
 
-    players = prompt('How many players? (1-4)');
+    players = Number(prompt('How many players? (1-4)'));
+
 
     if (players === 1 || players === 2 || players === 3 || players === 4) {
 
 
         // players = prompt('How many players? 1-4');
-        console.log(`Players: ${players}`);
-    } else {
+        // console.log(`Players: ${players}`);
+            
+    console.log(`Players: ${players}`);
         return players;
-         alert("Invalid Input!");
+        
+    } else {
+        
+        alert("Invalid Input! (ENTER 1 - 4)");
+        
+        
     }
 
-    
     
 }
 
@@ -52,7 +58,7 @@ function displayDice(diceOne, diceTwo) {
 }
 
 
-const rollDice = function (roll) {
+const rollDice = function (diceRoll) {
 
     const max = 6;
     const min = 1;
@@ -66,7 +72,7 @@ const rollDice = function (roll) {
     displayDice(rollOne, rollTwo);
         
     
-    return roll = rollOne + rollTwo;
+    return diceRoll = rollOne + rollTwo;
 
 }
 
@@ -77,24 +83,52 @@ function resetScore () {
     }
 }
 
+document.getElementById('play').addEventListener("click", playGame);
+document.getElementById('roll').addEventListener("click", playerRoll);
+
 function playGame() {
 
+    //# RESET SCORES
     resetScore();
     
-    // SELECT players
+    //# SELECT players
     choosePlayers(players);
 
-    for (let i = 0; i < players; i++){
-        rollDice();
+
+}
+
+
+
+players = 4;
+function playerRoll() {
+    
+    console.log(players);
+    let playerScore;
+    let gameMessage = document.getElementById('messages').textContent;
+    console.log(`Message: ${gameMessage}`)
+    for (let i = 1; i <= players; i++){
+        
+        /*
+        ? ASK PLAYER TO CLICK ROLL BTN TO ROLL
+        ? PLAYER ROLLS 
+        ? DISPLAY ROLL 
+        ? CHECK ROLL
+        ? NEXT PLAYER ROLL
+        
+        */
+
+        if (playerScore == 7 || playerScore == 11) {
+            
+            gameMessage = `Player ${i} has won with ${playerScore}`;
+
+        } else {
+            gameMessage = `Player ${i}  CLICK ROLL!`;
+            playerScore = rollDice();
+
+            console.log(gameMessage);
+            document.querySelector(`.player-${i}-score`).textContent = playerScore;
+
+        }
     }
-
-    //  1st PLAYER ROLLS
-    roll = rollDice();
-    console.log(roll);
-
-    let playerScore = document.querySelector('.player-1-score').textContent;
-    console.log(`playerScore: ${document.querySelector('.player-1-score').textContent}`)
-    console.log(playerScore);
-    playerScore = roll;
 
 }

@@ -1,29 +1,34 @@
 body{
     width: 100%;
+    padding: 0;
     height: auto;
     /* background-color: brown; */
-    background-color: black;
+    /* background-color: black; */
 
 }
-/* HEADER */
+
+/*# HEADER */
 header{
 
-    margin: 0;
-    padding: 0;
+    margin: 1%;
+    padding: 1%;
     height: 8%;
-    color: white;
+    color: #000;
+    /* border: 1px dashed yellow; */
 }
 h1{
-
-    text-align: center;
     font-size: 2rem;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .menu{
-    height: 3px;
-    margin: 0;
+    height: 20px;
+    padding: 0%;
+    margin: 1px;
+    /* border: 1px dashed red; */
+    background: brown;
 }
 ul{
     margin: 0;
@@ -35,95 +40,116 @@ ul{
 li{
     display:inline-block;
     text-decoration: none;
-    border: 1px dotted pink;
     text-align:center;
     margin: 0 auto;
     margin-left: 15%;
+    color: white;
 }
-/* GAME */
-/* .container{
-    width: 90%;
-    height: 70vh;
-    border: 1px dashed blue;
-    background-color: white;
-    margin: 0;
-    margin-left: 5%;
-    margin-right: 5%;
-} */
+
+/*# GAME */
+.game{
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+}
 .left{
     flex-direction: column;
     width: 48%;
-    background-color: red;
-    border: 1px dashed white;
+    /* background-color: red; */
     height: 100%;
     margin: 0;
 }
-.middle{
-    width: 68%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
+
+
 .right{
     width: 50%;
-    background-color: white;
-    border: 1px dashed brown;
     height: 100%;
-
     justify-content: space-between;
 
 }
-/*DICE*/
-img{ margin: 5%;}
+
 .player{
-    background: blue;
+    background: rgba(0,0, 255, 1);
     border-radius: 10% 10%;
-    width: 100%;
+    width: 80%;
     height: 40%;
-    margin:0;
+    margin:5% auto;
     text-align: center;
+    color: white;
+}
+h4{
+    font-size: 3rem;
+    margin: 0 auto;
 }
 .player .score{
     font-size: 5rem;
 }
-P {
-    background-color: teal;
-    text-align: center;
-}
-.game{
-    display: flex;
-    flex-direction: row;
-    border: 1px dashed yellow;
-    height: 80%;
-}
-.middle h2{
+.player h2{
     font-size: 2rem;
     color: white;
     text-align: center;
     background:brown;
     margin:0;
+    height: 18%;
 
 }
+
+
+
+/* MID COLUMN */
+.middle{
+    display: flex;
+    flex-direction: column;
+    width: 68%;
+    margin: 0 5%;
+}
+
 /* BOARD */
 .board {
     display: flex;
-    height: 50%;
+    height: 200px;
     justify-content: center;
-        justify-items: center;
+    justify-items: center;
     margin: 0;
     background-color: green;
+    margin-top: 5%;
 
 }
+.board-title {
+    text-align: center;
+    width: 100%;
+    border: 1px dashed red;
+}
+h2 {
+    margin: auto 0;
+}
+/*DICE*/
+img{ 
+    margin: 10%;
 
-.board > img{
-
-    margin: 25%;
-    
-    
 }
 
 button{
     /* display: hidden; */
     width: 100%;
     height: 50px;
-    margin: 3%;
+    margin: 2% auto;
+}
+
+.current{
+    background: #F78E02;
+    color: lightgreen;;
+}
+
+.messages{
+    border: 1px dashed white;
+    margin: 0 auto;
+    padding: 5%;
+    height: 10px;
+    width: 100%;
+}
+
+.messages p{
+    color: red;
+    font-size: 1.3rem;
 }
